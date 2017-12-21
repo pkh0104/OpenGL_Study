@@ -4,7 +4,7 @@ LDFLAGS = -lm
 
 SOURCEDIR = .
 BUILDDIR  = .
-BINARY    = ShaderSample
+BINARY    = ShaderTest
 
 SOURCES := $(shell find $(SOURCEDIR) -name '*.cpp')
 OBJECTS := $(addprefix $(BUILDDIR)/,$(SOURCES:%.cpp=%.o))
