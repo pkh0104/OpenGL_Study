@@ -19,6 +19,24 @@ void renderScene(void)
 
     glUseProgram(g_Program);
 
+    GLuint VertexArrayID;
+    glGenVertexArrays(1, &VertexArrayID);
+    glBindVertexArray(VertexArrayID);
+
+    GLuint VertexBufferID;
+    glGenBuffers(1, &VertexBufferID);
+    glBindBuffer(GL_ARRAY_BUFFER, VertexBufferID);
+
+    static const GLfloat VertexBufferData[] = {
+         0.25, -0.25, 0.5, 1.0,
+        -0.25, -0.25, 0.5, 1.0,
+         0.25,  0.25, 0.5, 1.0 
+    };
+
+    glBufferData(GL_ARRAY_BUFFER, sizeof(VertexBufferData), VertexBufferData, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4*sizeof(GLfloat), (void*)0);
+
     glDrawArrays(GL_TRIANGLES, 0, 3);
 
     glutSwapBuffers();
