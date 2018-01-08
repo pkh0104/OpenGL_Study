@@ -1,8 +1,9 @@
 #version 130
 
-out vec4 color;
+in vec4 vColor;
+out vec4 FragColor;
 
 void main(void)
 {
-	color = vec4(0.0, 1.0, 0.0, 1.0);
+	FragColor = vColor;
 }

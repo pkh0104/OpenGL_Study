@@ -12,10 +12,10 @@ OBJECTS := $(addprefix $(BUILDDIR)/,$(SOURCES:%.cpp=%.o))
 all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJECTS) -o $(BINARY)
+	$(CC) $(OBJECTS) -o $(BINARY) $(CFLAGS) $(LDFLAGS) 
 
 $(BUILDDIR)/%.o: %.cpp
-	$(CC) $(CFLAGS) $(LDFLAGS) -I$(SOURCEDIR) -c $< -o $@
+	$(CC) -I$(SOURCEDIR) -c $< -o $@ $(CFLAGS) $(LDFLAGS) 
 
 clean:
 	rm -rf Core/*.o ./*.o $(BINARY)
