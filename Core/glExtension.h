@@ -17,6 +17,7 @@
 #define radiansToDegrees(x) (x * k180PI) // Converts radians to degrees.
 
 void glExtLoadIdentity(float matrix[16]);
+void glExtConvert4to3(float matrix3x3[9], float matrix4x4[16]);
 void glExtScale(float matrix[16], const float sx, const float sy, const float sz);
 void glExtFrustum(float result[16], const float left, const float right, const float bottom, const float top, const float near, const float far);
 void glExtPerspective(GLfloat matrix[16], GLfloat fovy, GLfloat aspect, GLfloat near, GLfloat far);
@@ -27,5 +28,6 @@ void glExtMultiply(float result[16], float m1[16], float m2[16]);
 void glExtTranslate(GLfloat result[16], GLfloat x, GLfloat y, GLfloat z);
 float glExtGetLength(const float x, const float y, const float z);
 void glExtLookat(float* result, const float eyex, const float eyey, const float eyez, const float centerx, const float centery, const float centerz, const float upx, const float upy, const float upz);
+bool glExtInverseMatrix(const float m[16], float invOut[16]);
 
 #endif /* GLEXTENTION_H_ */

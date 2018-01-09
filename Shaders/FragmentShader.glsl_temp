@@ -1,0 +1,10 @@
+#version 130
+
+in vec4 FragmentColor;
+
+out vec4 FrameBuffer;
+
+void main(void)
+{
+	FrameBuffer = FragmentColor;
+}
